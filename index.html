@@ -6,70 +6,90 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HangmanApp</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Muli&display=swap" rel="stylesheet">
     <link href="./assets/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-        <div class = "container">
-                <div class = "jumbotron">
-                        <h4>Hangman - 80's Style</h4>
-                        <h5>Welcome to Indian Cine Music</h5>
-                        <h6>Guess the artist name</h6>
-                        <h6><a href= "../index.html">Return to Main Menu</a></h6>
-                </div>
-          </div>
-          <div class = "container" id = "score">
-               <div class = "row">
-                      <div class = "col-md-6">
-                            <img id = "artpic" src = "https://banyantreeevents.files.wordpress.com/2014/03/indian-instruments-pack.jpg" width = "200" height="200" />
-                      </div>
-                       <div class = "col-md-6">
-                            <h3 id = "name">Vinnaithandi Varuvaya</h3>
-                            <h3 id = "album">Mannippaya...</h3>
-                      </div>
-               </div>
-               <div class = "row">
-                       <div class = "col-mg-12">
-                         <audio id = "audiofile" controls autoplay>
-                               <source src = "./audio/mainpagesong.mp3" type ="audio/mpeg">
-                                Your Browser does not support the audio functionality
-                         </audio>
-                      </div>
-              </div>
-               <div class = "row">
-                       <div class = "col-lg-12">
-                         <h4 id = "subhead">Guess the artist name while listening to this song...</h4>
-                         <h4>PRESS ANY KEY TO GET STARTED !!</h4>
-                         <p>Hint - janaki,jency,illayaraja,hariharan,yesudas,chitra,spb</p>
-                      </div>
-              </div>
-               <div class = "row">
-                      <div class = "col-lg-6">
-                          <h2>Wins</h2>
-                          <h1 id = "twin"></h1>
-                      </div>
-                      <div class = "col-lg-6">
-                          <h1>Lost</h1>
-                          <h1 id = "tlost"></h1>
-                      </div>
-                </div>
-                <div class = "row">
-                     <div class = "col-md-6">
-                           <h3>Number of Guesses remaining</h3>
-                           <h2 id = "tguess"></h2>
-                     </div>
-                       <div class = "col-md-6">
-                           <h3>Letter already guessed</h3>
-                           <h2 id = "letterguess"></h2>
-                       </div>
-                 </div>
-                 <div class = "row">
-                       <div class = "col-lg-12">
-                             <h3>Current Word</h3>
-                             <p id = "word"></p>
-                             <p id = "dash"></p>
-                      </div>
-                 </div>
-          </div>
+ 
+            <nav>
+                    <h1>Fun App - Guess Indian cine singers name</h1>
+                    <div class="gamescore">
+                            <h2>Wins : 
+                            <span id = "twin"></span></h2>
+                       
+                            <h2>Losses : 
+                            <span id = "tlost"><span></h2>
+                    </div>
+                </nav>
+ 
+    <div class="mainpage">
+            <div id="gamebox">
+                    <h3>Current Singer</h3>
+                    <h5 id = "word"></h5>
+                    <h5 id = "dash"><h5>
+                    <p id="letterguess"></p>
+                    <p id="totalguess"></p>
+            </div>      
+
+            <div id="singerscontainer">
+                <h4>Singers in Game</h4>
+                <div id="singerslist"></div>
+            </div>
+              
+    </div>
     <script src="./assets/script.js"></script>
 </body>
 </html>
+
+<!-- <div class = "container">
+                        
+        <h6><a href= "../index.html">Return to Main Menu</a></h6>
+
+             <img id = "artpic" src = "https://banyantreeevents.files.wordpress.com/2014/03/indian-instruments-pack.jpg" width = "200" height="200" />
+      
+             <h3 id = "name">Vinnaithandi Varuvaya</h3>
+             <h3 id = "album">Mannippaya...</h3>
+   
+</div>
+<div class = "row">
+       
+          <audio id = "audiofile" controls autoplay>
+                <source src = "./audio/mainpagesong.mp3" type ="audio/mpeg">
+                 Your Browser does not support the audio functionality
+          </audio>
+       
+</div>
+<div class = "row">
+   
+          <h4 id = "subhead">Guess the artist name while listening to this song...</h4>
+          <h4>PRESS ANY KEY TO GET STARTED !!</h4>
+          <p>Hint - janaki,jency,illayaraja,hariharan,yesudas,chitra,spb</p>
+     
+</div>
+<div class = "row">
+      
+           <h2>Wins</h2>
+           <h1 id = "twin"></h1>
+      
+           <h1>Lost</h1>
+           <h1 id = "tlost"></h1>
+      
+ </div>
+ <div class = "row">
+      \
+
+            <h3>Number of Guesses remaining</h3>
+            <h2 id = "tguess"></h2>
+      \
+            <h3>Letter already guessed</h3>
+            <h2 id = "letterguess"></h2>
+        ]
+  </div>
+  <div class = "row">
+        <div class = "col-lg-12">
+              <h3>Current Word</h3>
+              <p id = "word"></p>
+              <p id = "dash"></p>
+       </div>
+  </div>
+</div> -->

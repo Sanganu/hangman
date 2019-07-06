@@ -1,5 +1,5 @@
        // Global variables
-       var gl_artist = ['jency','chitra','janaki','spb','illayaraja','hariharan','yesudas'];
+       var gl_artist = ['jency','chitra','janaki','spb','illayaraja','chinmayi','shreeyagoshal','hariharan','yesudas'];
        var gl_album = ["En Vaanilay",
                         "Ninnukori Varanam",
                         "Kaatril enthan geetham",
@@ -25,22 +25,30 @@
              "./audio/hariharansong.mp3",
              "./audio/yesudassong.mp3"
        ]
-       var gl_tries;
-       var gl_word ;
-       var gl_tryletter ;
-       var gl_end = false;
-       var gl_answer ;
-       var gl_win = 0;
-       var gl_lost = 0;
-       var ht3 = document.getElementById('twin');
-       var ht4 = document.getElementById('tlost')
-       ht3.innerHTML = 0;
-       ht4.innerHTML = 0;
+   
+       function reset(){
+            var gl_tries;
+            var gl_word ;
+            var gl_tryletter ;
+            var gl_end = false;
+            var gl_answer 
+            var gl_win = 0;
+            var gl_lost = 0;
+            var htwins = document.getElementById('twin');
+            var htlosses = document.getElementById('tlost')
+            htwins.textContent = 0;
+            htlosses.textContent = 0;
+            for(let i=0;i<gl_artist;i++){
+                var singerbox = document.getElementById("singerslist");
+                singerbox.textContent = gl_artist[i];
+            }
+       }
+
+       reset();
+
          function game()
          {
-
-
-                var index = parseInt(Math.random()*(gl_artist.length));
+             var index = parseInt(Math.random()*(gl_artist.length));
                 gl_word = gl_artist[index];
                 console.log('The Artisit is :'+gl_artist[index]);
                 var dashletter = "";
@@ -49,21 +57,21 @@
                  gl_end = false;
                  gl_answer = "";
                 //getting HTML elements
-                var t1 = document.getElementById("dash");
-                var ht2 = document.getElementById("tguess");""
-                var ht5 = document.getElementById('letterguess');
-                var t2 = document.getElementById("word");
-                var n1 = document.getElementById("name");
+                var htdashes = document.getElementById("dash");
+                var httotalguess = document.getElementById("totalguess");
+                var htletterguess = document.getElementById('letterguess');
+                var htword = document.getElementById("word");
+                var htname = document.getElementById("name");
 
-                for(var l = 0;l < gl_word.length;l++)
-                {
-                    gl_answer = gl_answer + ".";
-                    dashletter = dashletter + " _";
-                }
-                t1.innerHTML = dashletter;
-                t2.innerHTML = "";
-                ht2.innerHTML = gl_tries;
-                ht5.innerHTML = gl_tryletter;
+                // for(var l = 0;l < gl_word.length;l++)
+                // {
+                //     gl_answer = gl_answer + ".";
+                //     dashletter = dashletter + " _";
+                // }
+                // t1.textContent = dashletter;
+                // t2.textContent = "";
+                // ht2.textContent = gl_tries;
+                // ht5.textContent = gl_tryletter;
           }
 
          function display()
@@ -74,10 +82,10 @@
             var pic = document.getElementById("artpic");
             var aud = document.getElementById("audiofile");
             //console.log('The wordin display :'+gl_word);
-            vname.innerHTML = gl_word;
+            vname.textContent = gl_word;
             var ind = gl_artist.indexOf(gl_word);
-            valbum.innerHTML = gl_album[ind];
-            vhd.innerHTML = "The Artisit is : "+gl_word+" ... listen to her song while guessing the next artist... ";
+            valbum.textContent = gl_album[ind];
+            vhd.textContent = "The Artisit is : "+gl_word+" ... listen to her song while guessing the next artist... ";
             pic.setAttribute("src",gl_pics[ind]);
             aud.setAttribute("src",gl_audio[ind]);
           }
@@ -95,9 +103,6 @@ game();
                             var entry = event.key;
                             console.log('Event key :'+entry);
                             letter = entry.toLowerCase();
-
-
-
                             var found = false;
 
 
@@ -172,11 +177,16 @@ game();
                                    var ht3 = document.getElementById('twin');
                                    var ht4 = document.getElementById('tlost');
                                    var ht5 = document.getElementById('letterguess');
-                                   ht1.innerHTML = gl_answer;
-                                   ht2.innerHTML = gl_tries;
-                                   ht3.innerHTML = gl_win;
-                                   ht4.innerHTML = gl_lost;
-                                   ht5.innerHTML = gl_tryletter;
+                                   ht1.textContent = gl_answer;
+                                   ht2.textContent = gl_tries;
+                                   ht3.textContent = gl_win;
+                                   ht4.textContent = gl_lost;
+                                   ht5.textContent = gl_tryletter;
+                                //    ht1.innerHTML = gl_answer;
+                                //    ht2.innerHTML = gl_tries;
+                                //    ht3.innerHTML = gl_win;
+                                //    ht4.innerHTML = gl_lost;
+                                //    ht5.innerHTML = gl_tryletter;
 
                                    if (gl_end) {
                                      game();

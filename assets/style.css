@@ -1,12 +1,52 @@
 body {
-    margin: 20px;
-    line-height: 25px;
-  
+   background-image: url("./resources/peacock.jpg");
+   background-size: cover;
+   margin:4%;
+   height:auto;
+   background-repeat: no-repeat;
   }
-  .row {
-   background-color: rgba(153, 243, 255, 0.29);
-   color:  hsla(0, 22%, 0%, 1);
-   margin:20px;
-   padding:20px;
-   font-size: 20px;
-  }
+  nav {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: black;
+    opacity: 0.5;
+    top:0;
+    left:0;
+    min-height: 5%;
+    margin:0;
+    width:90%;
+    margin-left: 2%;
+    color: whitesmoke;
+    position: fixed;
+    margin-bottom:2%;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+#gamesore{
+   text-align: right;
+}
+
+#gamebox{
+    background-color: black;
+    opacity:0.5;
+    color: white;
+    order:1;
+    top:50%;
+}
+.mainpage{
+    clear:both;
+    position:relative;
+    justify-content: center; 
+    margin-top:2%;
+    min-width:80%;
+    height:auto ;
+    display: flex;
+    align-items:center;
+}
+#singerscontainer{
+    position:fixed;
+    width:90%;
+    bottom:0;
+    margin-bottom: 0%;
+}
