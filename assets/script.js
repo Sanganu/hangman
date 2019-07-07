@@ -1,61 +1,104 @@
        // Global variables
-       var gl_artist = ['jency','chitra','janaki','spb','illayaraja','chinmayi','shreeyagoshal','hariharan','yesudas'];
-       var gl_album = ["En Vaanilay",
-                        "Ninnukori Varanam",
-                        "Kaatril enthan geetham",
-                        "Senorita",
-                        "Raja Raajathi",
-                        "Nee Kaatru Naan",
-                        "Thoongatha Vishigal"];
-       var gl_pics = [
-              "http://www.cinecoffee.com/wp-content/uploads/2015/01/Singer-Jency-Antony-Latest-Stills.png",
-              "http://www.thehindu.com/2005/07/21/images/2005072113740201.jpg",
-              "http://www.cineradham.com/assets/images/biography/singers/s-janaki/1419940481s-janaki-biography.jpg",
-              "https://1.bp.blogspot.com/_FKxki5wK_p0/R2LKW1CeppI/AAAAAAAAABQ/twgtu3Xbb7M/S220/SPB+14.JPG",
-              "http://2.bp.blogspot.com/-L9RklEQSXUU/UbX7ViTMciI/AAAAAAAAAm4/YL0rjB31Nes/s1600/3486337.cms.jpg",
-              "https://chiloka.com/i/i/h/a/r/hariharan-7.jpg",
-              "http://s.saregama.com/image/c/m/0/fb/9e/yeshu_1401893713.jpg"
-              ]
-       var gl_audio = [
-             "./audio/jencysong.mp3",
-             "./audio/chitrasong.mp3",
-             "./audio/janakisong.mp3",
-             "./audio/spbsong.mp3",
-             "./audio/illayarajasong.mp3",
-             "./audio/hariharansong.mp3",
-             "./audio/yesudassong.mp3"
-       ]
-   
+      var gl_artistprofile =[
+         {
+           name:"Jency",
+           song:"En Vaanilay",
+           image:"",
+           audio:"./resources/audio/jencysong.mp3"
+         },
+         {
+          name:"Chitra",
+          song:"Ninnukori Varanam",
+          image:"",
+          audio:"./resources/audio/chitrasong.mp3"
+        },
+        {
+          name:"Janaki",
+          song:"Kaatril enthan geetham",
+          image:"",
+          audio:"./resources/audio/janakisong.mp3"
+        },
+        {
+          name:"SPB",
+          song:"Senorita",
+          image:"",
+          audio:"./resources/audio/spbsong.mp3"
+        },
+        {
+          name:"Illayaraja",
+          song:"Raja Raajathi",
+          image:"",
+          audio:"./resources/audio/illayarajasong.mp3"
+        },
+        {
+          name:"Chinmayi",
+          song:"",
+          image:"",
+          audio:""
+        },
+        {
+          name:"ShreyaGoshal",
+          song:"Mannipaya",
+          image:"",
+          audio:"./resources/audio/shreeyagoshal.mp3"
+        },{
+          name:"Hariharan",
+          song:"",
+          image:"",
+          audio:"./resources/audio/hariharansong.mp3"
+        },{
+          name:"Yesudas",
+          song:"",
+          image:"",
+          audio:"./resources/audio/yesudassong.mp3"
+        }
+       ];
+
+       var gl_tries;
+       var gl_word ;
+       var gl_tryletter ;
+       var gl_end = false;
+       var gl_answer 
+       var gl_win = 0;
+       var gl_lost = 0;
+       var index;
+
+       reset();
+       game();
+
        function reset(){
-            var gl_tries;
-            var gl_word ;
-            var gl_tryletter ;
-            var gl_end = false;
-            var gl_answer 
-            var gl_win = 0;
-            var gl_lost = 0;
+   
             var htwins = document.getElementById('twin');
             var htlosses = document.getElementById('tlost')
             htwins.textContent = 0;
             htlosses.textContent = 0;
-            for(let i=0;i<gl_artist;i++){
-                var singerbox = document.getElementById("singerslist");
-                singerbox.textContent = gl_artist[i];
+            var singerbox = document.getElementById("singerslist");
+            console.log("in reset");
+            var singerlist =""
+            for(let i=0;i<gl_artistprofile.length;i++){
+              var singer =  gl_artistprofile[i].name;
+              singerlist = singerlist + `<span class="names">${singer}   </span>`;
+              console.log(singerlist);
             }
+            console.log("Singerlist" - singerlist);
+            singerbox.innerHTML = singerlist;
+            // singerbox.innerHTML = gl_artist;
        }
-
-       reset();
 
          function game()
          {
-             var index = parseInt(Math.random()*(gl_artist.length));
-                gl_word = gl_artist[index];
-                console.log('The Artisit is :'+gl_artist[index]);
+                index = parseInt(Math.random()*(gl_artistprofile.length));
+                gl_word = gl_artistprofile[index].name.toLowerCase();
+                var aud = document.getElementById("audiofile");
+                aud.setAttribute("src",gl_artistprofile[index].audio);
+               
+                console.log('The Artisit is :'+gl_artistprofile[index]);
                 var dashletter = "";
                  gl_tries = gl_word.length * 2;
                  gl_tryletter = "";
                  gl_end = false;
                  gl_answer = "";
+
                 //getting HTML elements
                 var htdashes = document.getElementById("dash");
                 var httotalguess = document.getElementById("totalguess");
@@ -63,15 +106,14 @@
                 var htword = document.getElementById("word");
                 var htname = document.getElementById("name");
 
-                // for(var l = 0;l < gl_word.length;l++)
-                // {
-                //     gl_answer = gl_answer + ".";
-                //     dashletter = dashletter + " _";
-                // }
-                // t1.textContent = dashletter;
-                // t2.textContent = "";
-                // ht2.textContent = gl_tries;
-                // ht5.textContent = gl_tryletter;
+                for(  var l = 0;l < gl_word.length;l++)
+                {
+                   gl_answer = gl_answer + " ";
+                   dashletter = dashletter + " _";
+                }
+                htdashes.textContent = dashletter;
+                httotalguess.textContent = gl_tries;
+                htletterguess.textContent = gl_tryletter;
           }
 
          function display()
@@ -80,23 +122,23 @@
             var valbum = document.getElementById("album");
             var vhd = document.getElementById("subhead");
             var pic = document.getElementById("artpic");
-            var aud = document.getElementById("audiofile");
+           
             //console.log('The wordin display :'+gl_word);
             vname.textContent = gl_word;
-            var ind = gl_artist.indexOf(gl_word);
-            valbum.textContent = gl_album[ind];
+            valbum.textContent = gl_artistprofile[index].album;
             vhd.textContent = "The Artisit is : "+gl_word+" ... listen to her song while guessing the next artist... ";
-            pic.setAttribute("src",gl_pics[ind]);
-            aud.setAttribute("src",gl_audio[ind]);
+            pic.setAttribute("src",pic);
           }
 
-game();
+
 
 
      document.onkeyup = function(event)
      {
         var codek = event.keyCode;
         console.log('codek + :'+codek);
+        document.getElementById("message").textContent = "";
+
         if ( (( codek > 64) && (codek < 91)) ||
            ((codek > 96) && (codek < 123)) )
            {
@@ -117,14 +159,12 @@ game();
                             if (found)
                             {
                                   console.log(" found Number of tries: "+ gl_tries);
-
+                                  document.getElementById("message").textContent = "Letter already guessed!"
                             }
                             else {
                                                 var init = false;
                                                 for(var i =0; i < gl_word.length; i++)
                                                 {
-                                                  //console.log('letter inthe for loop : '+letter);
-                                                  //console.log('artisit letters : '+gl_word[i]);
                                                   if ( letter === gl_word[i] )
                                                   {
                                                            var part1 = gl_answer.substring(0,i);
@@ -142,7 +182,7 @@ game();
                                              if (init)
                                               {
                                                    console.log('right letter guess : '+gl_answer);
-                                                     //gl_tries = gl_tries - 1 ;
+                                                     
                                               }
                                              else {
                                                    gl_tryletter = gl_tryletter + letter;
@@ -173,20 +213,16 @@ game();
                                      }
 
                                    var ht1 = document.getElementById("word");
-                                   var ht2 = document.getElementById("tguess");
                                    var ht3 = document.getElementById('twin');
                                    var ht4 = document.getElementById('tlost');
                                    var ht5 = document.getElementById('letterguess');
+                                   var httotalguess = document.getElementById("totalguess");
                                    ht1.textContent = gl_answer;
-                                   ht2.textContent = gl_tries;
+                                   httotalguess.textContent = gl_tries;
                                    ht3.textContent = gl_win;
                                    ht4.textContent = gl_lost;
                                    ht5.textContent = gl_tryletter;
-                                //    ht1.innerHTML = gl_answer;
-                                //    ht2.innerHTML = gl_tries;
-                                //    ht3.innerHTML = gl_win;
-                                //    ht4.innerHTML = gl_lost;
-                                //    ht5.innerHTML = gl_tryletter;
+                              
 
                                    if (gl_end) {
                                      game();

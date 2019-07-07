@@ -1,9 +1,12 @@
-body {
+ html{
+     height: 100vh;
+ }
+ body {
    background-image: url("./resources/peacock.jpg");
    background-size: cover;
    margin:4%;
-   height:auto;
    background-repeat: no-repeat;
+   color:whitesmoke;
   }
   nav {
     font-family: 'IBM Plex Sans', sans-serif;
@@ -14,7 +17,7 @@ body {
     min-height: 5%;
     margin:0;
     width:90%;
-    margin-left: 2%;
+    margin-left: 4%;
     color: whitesmoke;
     position: fixed;
     margin-bottom:2%;
@@ -30,23 +33,50 @@ body {
 #gamebox{
     background-color: black;
     opacity:0.5;
-    color: white;
-    order:1;
-    top:50%;
+    /* order:1; */
+    /* top:50%; */
+    font-family: 'Muli', sans-serif;
+    border-left: 1px solid white;
+    border-bottom:1px solid white;
+    border-right: 1px solid white;
+    min-width: 30%;
+    font-size: 18px;
+    text-align: right;
+    margin-top:3%;
+    margin-right:2.5%;
+    align-self: center;
 }
 .mainpage{
     clear:both;
     position:relative;
-    justify-content: center; 
+    justify-content:space-between; 
     margin-top:2%;
     min-width:80%;
-    height:auto ;
+    height:80vh;
     display: flex;
     align-items:center;
 }
 #singerscontainer{
-    position:fixed;
     width:90%;
     bottom:0;
     margin-bottom: 0%;
+    font-family: 'Muli', sans-serif;
+    display: block;
+}
+#singerlist{
+   display:inline;
+   font-size: 20px; 
+   font-family: 'Cairo', sans-serif;
+}
+.names{
+  padding-right: 1%;
+  padding-left:1%;
+  margin : 1%;
+  font-size: 16px;
+}
+#results{
+    font-family: 'Muli', sans-serif;
+    border-left: 1px solid white;
+    border-bottom:1px solid white;
+    border-right: 1px solid white;
 }
