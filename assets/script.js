@@ -39,7 +39,7 @@
           name:"Hariharan",
           song:"./assets/resources/harharan.jpg",
           image:"./assets/resources/hariharan.jpg",
-          audio:"../assets/resources/audio/hariharansong.mp3"
+          audio:"./assets/resources/audio/hariharansong.mp3"
         },{
           name:"Yesudas",
           song:"",
@@ -61,7 +61,8 @@
        game();
 
        function reset(){
-   
+             document.getElementById("restartbtn").style.visibility = "hidden";
+             document.getElementById("artpic").style.visibility = "hidden";
             var htwins = document.getElementById('twin');
             var htlosses = document.getElementById('tlost')
             htwins.textContent = 0;
@@ -81,12 +82,15 @@
 
          function game()
          {
+                document.getElementById("restartbtn").style.visibility = "hidden";
+                document.getElementById("artpic").style.visibility = "hidden";
+             
                 index = parseInt(Math.random()*(gl_artistprofile.length));
                 gl_word = gl_artistprofile[index].name.toLowerCase();
                 var aud = document.getElementById("audiofile");
                 aud.setAttribute("src",gl_artistprofile[index].audio);
                
-                console.log('The Artisit is :',gl_artistprofile[index].audio);
+           //     console.log('The Artisit is :',gl_artistprofile[index].audio);
                 var dashletter = "";
                  gl_tries = gl_word.length * 2;
                  gl_tryletter = "";
@@ -108,6 +112,8 @@
                 htdashes.textContent = dashletter;
                 httotalguess.textContent = gl_tries;
                 htletterguess.textContent = gl_tryletter;
+                htname.textContent = gl_answer;
+                htword.textContent = gl_answer;
           }
 
          function display()
@@ -117,8 +123,9 @@
             var vtwin = document.getElementById("twin");
             var vtlost = document.getElementById("tlost");
             var pic = document.getElementById("artpic");
-            vname.textContent = gl_word;
+            vname.textContent = gl_word[0].toUpperCase()+gl_word.slice(1);
             valbum.textContent = gl_artistprofile[index].album;
+            document.getElementById("artpic").style.visibility = "visible";
             pic.setAttribute("src",gl_artistprofile[index].image);
             console.log("Img:", gl_artistprofile[index].image);
             vtwin.textContent = gl_win;
@@ -131,7 +138,7 @@
      document.onkeyup = function(event)
      {
         var codek = event.keyCode;
-        console.log('codek + :'+codek);
+       // console.log('codek + :'+codek);
         document.getElementById("message").textContent = "";
 
         if ( (( codek > 64) && (codek < 91)) ||
@@ -220,7 +227,8 @@
                               
 
                                    if (gl_end) {
-                                     game();
+                                    document.getElementById("restartbtn").style.visibility = "visible";
+                                    
                                    }
                      }
                      else {
