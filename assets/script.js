@@ -3,54 +3,48 @@
          {
            name:"Jency",
            song:"En Vaanilay",
-           image:"",
-           audio:"./resources/audio/jencysong.mp3"
+           image:"./assets/resources/jency.jpg",
+           audio:"./assets/resources/audio/jencysong.mp3"
          },
          {
           name:"Chitra",
           song:"Ninnukori Varanam",
-          image:"",
-          audio:"./resources/audio/chitrasong.mp3"
+          image:"./assets/resources/chitra.jpg",
+          audio:"./assets/resources/audio/chitrasong.mp3"
         },
         {
           name:"Janaki",
           song:"Kaatril enthan geetham",
-          image:"",
-          audio:"./resources/audio/janakisong.mp3"
+          image:"./assets/resources/janaki.jpg",
+          audio:"./assets/resources/audio/janakisong.mp3"
         },
         {
           name:"SPB",
           song:"Senorita",
-          image:"",
-          audio:"./resources/audio/spbsong.mp3"
+          image:"./assets/resources/spb.jpg",
+          audio:"./assets/resources/audio/spbsong.mp3"
         },
         {
           name:"Illayaraja",
           song:"Raja Raajathi",
-          image:"",
-          audio:"./resources/audio/illayarajasong.mp3"
-        },
-        {
-          name:"Chinmayi",
-          song:"",
-          image:"",
-          audio:""
+          image:"./assets/resources/illayaraja.jpg",
+          audio:"./assets/resources/audio/illayarajasong.mp3"
         },
         {
           name:"ShreyaGoshal",
           song:"Mannipaya",
-          image:"",
-          audio:"./resources/audio/shreeyagoshal.mp3"
+          image:"./assets/resources/shreyagosal.png",
+          audio:"./assets/resources/audio/shreeyagoshal.mp3"
         },{
           name:"Hariharan",
-          song:"",
-          image:"",
-          audio:"./resources/audio/hariharansong.mp3"
+          song:"./assets/resources/harharan.jpg",
+          image:"./assets/resources/hariharan.jpg",
+          audio:"../assets/resources/audio/hariharansong.mp3"
         },{
           name:"Yesudas",
           song:"",
-          image:"",
-          audio:"./resources/audio/yesudassong.mp3"
+          image:"./assets/resources/yesudas.jpg",
+          audio:"./assets/resources/audio/yesudassong.mp3"
         }
        ];
 
@@ -78,9 +72,9 @@
             for(let i=0;i<gl_artistprofile.length;i++){
               var singer =  gl_artistprofile[i].name;
               singerlist = singerlist + `<span class="names">${singer}   </span>`;
-              console.log(singerlist);
+            
             }
-            console.log("Singerlist" - singerlist);
+           
             singerbox.innerHTML = singerlist;
             // singerbox.innerHTML = gl_artist;
        }
@@ -92,7 +86,7 @@
                 var aud = document.getElementById("audiofile");
                 aud.setAttribute("src",gl_artistprofile[index].audio);
                
-                console.log('The Artisit is :'+gl_artistprofile[index]);
+                console.log('The Artisit is :',gl_artistprofile[index].audio);
                 var dashletter = "";
                  gl_tries = gl_word.length * 2;
                  gl_tryletter = "";
@@ -120,14 +114,15 @@
           {
             var vname = document.getElementById("name");
             var valbum = document.getElementById("album");
-            var vhd = document.getElementById("subhead");
+            var vtwin = document.getElementById("twin");
+            var vtlost = document.getElementById("tlost");
             var pic = document.getElementById("artpic");
-           
-            //console.log('The wordin display :'+gl_word);
             vname.textContent = gl_word;
             valbum.textContent = gl_artistprofile[index].album;
-            vhd.textContent = "The Artisit is : "+gl_word+" ... listen to her song while guessing the next artist... ";
-            pic.setAttribute("src",pic);
+            pic.setAttribute("src",gl_artistprofile[index].image);
+            console.log("Img:", gl_artistprofile[index].image);
+            vtwin.textContent = gl_win;
+            vtlost.textContent = gl_lost;
           }
 
 
@@ -201,7 +196,7 @@
                                              gl_win++;
                                              gl_end = true;
                                              var ht1 = document.getElementById("word");
-                                             ht1.innerHTML = gl_word;
+                                             ht1.innerHTML = gl_word[0].toUpperCase()+gl_word.slice(1);
                                            //  alert("Congrats...");
                                              display();
                                      }

@@ -1,5 +1,6 @@
  html{
      height: 100vh;
+     width:100vw;
  }
  body {
    background-image: url("./resources/peacock.jpg");
@@ -20,7 +21,7 @@
     margin-left: 4%;
     color: whitesmoke;
     position: fixed;
-    margin-bottom:2%;
+    margin-bottom:5%;
     display:flex;
     flex-direction:row;
     justify-content: space-between;
@@ -50,16 +51,16 @@
     clear:both;
     position:relative;
     justify-content:space-between; 
-    margin-top:2%;
+    margin-top:5%;
     min-width:80%;
-    height:80vh;
+    height:70vh;
     display: flex;
     align-items:center;
 }
 #singerscontainer{
     width:90%;
     bottom:0;
-    margin-bottom: 0%;
+   
     font-family: 'Muli', sans-serif;
     display: block;
 }
@@ -79,4 +80,25 @@
     border-left: 1px solid white;
     border-bottom:1px solid white;
     border-right: 1px solid white;
+}
+
+@media only screen and (max-width:730px){
+    #gamebox{
+      margin-top: 5%;
+      width:90%;
+    }
+    #results{
+     margin-top: 5%;
+      width:90%; 
+    }
+    #mainpage{
+        display:block;
+        justify-content: space-between;
+    }
+   
+}
+@media only screen and (max-width:730px){
+    #singersontainer{
+        display: block;
+    }
 }
