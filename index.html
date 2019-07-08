@@ -12,45 +12,41 @@
 <body>
      <div class ="container">
                 <div class="row">
-                <nav>
-                        <h1>Fun App - Guess Indian cine singers name</h1>
-                        <div class="gamescore">
-                                <h2>Wins : 
-                                <span id = "twin"></span></h2>
-                        
-                                <h2>Losses : 
-                                <span id = "tlost"><span></h2>
-                        </div>
-                </nav>
+                        <nav>
+                                <h1>Fun App - Guess Indian cine singers </h1>
+                                <div class="gamescore">
+                                        <h2>Wins   : 
+                                        <span id = "twin"></span></h2>
+                                
+                                        <h2>Losses : 
+                                        <span id = "tlost"><span></h2>
+                                </div>
+                        </nav>
                 </div>   
                 <div class="row">
-                                <div class="mainpage">
-                                      <div id="results" class="col-lg-4 col-md-12  col-sm-12">
-                                            <h3 id="name"></h3>
-                                            <h3 id="album"></h3>
-                                            <div class="img-wrapper">
-                                                <img id="artpic" src="" class="img-responsive" height=200 width=200/>
-                                            </div>
-                                            
+                        <div class="mainpage">
+                                 <div id="gamebox">
+                                            <h3>Guess the Singer</h3>
+                                            <h2 id = "word"></h2>
+                                            <h5 id = "dash"><h5>
+                                            <p id="message"></p>
+                                            <h5>Letters guessed wrong:  <span id="letterguess"></span></h5>
+                                            <h5>Total Guess: <span id="totalguess"></span></h5>
                                             <audio controls class="embed-responsive-item" id="audiofile" autoplay>
-                                                      <source src="" type="audio/mpeg" >
-                                                      Your browser does not support the audio tag.
-                                            </audio>
-                                      </div>
-                                      <div class="col-lg-4 col-md-0 embed-responsive">
-                                            <button class="btn btn-lg" onclick=game() id="restartbtn">Restart</button>
-                                      </div>
-                                                <div id="gamebox" class="col-lg-4  col-md-12 col-sm-12">
-                                                        <h3>Guess the Singer</h3>
-                                                        <h3 id = "word"></h3>
-                                                        <h3 id = "dash"><h3>
-                                                        <p id="message"></p>
-                                                        <h3>Letters guessed wrong:  <span id="letterguess"></span></h3>
-                                                        <h3>Total Guess: <span id="totalguess"></span></h3>
-                                                </div>      
-                                
-                                                
-                                </div>
+                                                  <source src="" type="audio/mpeg" >
+                                                   Your browser does not support the audio tag.
+                                            </audio>    
+                                  </div>      
+                                  <div id="results" >
+                                         <h3 id="name"></h3>
+                                         <h3 id="album"></h3>
+                                         <div class="img-wrapper">
+                                            <img id="artpic" src="" class="img-responsive" height=200 width=200/>
+                                         </div>
+                                         <button class="btn btn-success btn-block" onclick=game() id="restartbtn">Restart</button>
+                                  </div>
+                                  
+                        </div>        
                 </div>
                 <div class ="row">
                         <div id="singerscontainer" class="col-lg-12 col-md-12  embed-responsive">

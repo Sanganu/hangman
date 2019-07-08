@@ -84,7 +84,7 @@
          {
                 document.getElementById("restartbtn").style.visibility = "hidden";
                 document.getElementById("artpic").style.visibility = "hidden";
-             
+                document.getElementById("results").style.opacity = 0.5;
                 index = parseInt(Math.random()*(gl_artistprofile.length));
                 gl_word = gl_artistprofile[index].name.toLowerCase();
                 var aud = document.getElementById("audiofile");
@@ -123,6 +123,7 @@
             var vtwin = document.getElementById("twin");
             var vtlost = document.getElementById("tlost");
             var pic = document.getElementById("artpic");
+            document.getElementById("results").style.opacity = 1;
             vname.textContent = gl_word[0].toUpperCase()+gl_word.slice(1);
             valbum.textContent = gl_artistprofile[index].album;
             document.getElementById("artpic").style.visibility = "visible";

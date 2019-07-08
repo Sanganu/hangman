@@ -1,0 +1,73 @@
+ html{
+     height: 100vh;
+     width:100vw;
+ }
+
+ body {
+   background-image: url("./resources/peacock.jpg");
+   background-size: cover;
+   margin:4%;
+   background-repeat: no-repeat;
+   color:whitesmoke;
+  }
+
+  nav {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: black;
+    opacity: 0.5;
+     color: whitesmoke;
+  }
+
+    #gamesore{
+    text-align: right;
+    }
+
+#gamebox{
+    background-color: black;
+    opacity:0.5;
+    font-family: 'Muli', sans-serif;
+    font-size: 18px;
+  }
+
+#singerscontainer{
+    width:90%;
+    bottom:0;
+    font-family: 'IBM Plex Sans', sans-serif;
+    display: block;
+}
+#singerlist{
+   display:inline;
+   font-size: 20px; 
+}
+.names{
+  padding-right: 1%;
+  padding-left:1%;
+  margin : 1%;
+  font-size: 16px;
+}
+#results{
+    font-family: 'Muli', sans-serif;
+    background-color:black;
+    opacity:0.5;
+ }
+
+@media only screen and (max-width:730px){
+    /* #gamebox{
+      margin-top: 5%;
+      width:90%;
+    }
+    #results{
+     margin-top: 5%;
+      width:90%; 
+    }
+    #mainpage{
+        display:block;
+        justify-content: space-between;
+    } */
+   
+}
+@media only screen and (max-width:730px){
+    #singerscontainer{
+        display: block;
+    }
+}
