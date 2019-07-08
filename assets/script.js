@@ -128,7 +128,7 @@
             valbum.textContent = gl_artistprofile[index].album;
             document.getElementById("artpic").style.visibility = "visible";
             pic.setAttribute("src",gl_artistprofile[index].image);
-            console.log("Img:", gl_artistprofile[index].image);
+            //console.log("Img:", gl_artistprofile[index].image);
             vtwin.textContent = gl_win;
             vtlost.textContent = gl_lost;
           }
@@ -146,7 +146,7 @@
            ((codek > 96) && (codek < 123)) )
            {
                             var entry = event.key;
-                            console.log('Event key :'+entry);
+                          //  console.log('Event key :'+entry);
                             letter = entry.toLowerCase();
                             var found = false;
 
@@ -161,7 +161,7 @@
 
                             if (found)
                             {
-                                  console.log(" found Number of tries: "+ gl_tries);
+                                //  console.log(" found Number of tries: "+ gl_tries);
                                   document.getElementById("message").textContent = "Letter already guessed!"
                             }
                             else {
@@ -233,7 +233,8 @@
                                    }
                      }
                      else {
-                       console.log('Press Letters only!!!');
+                      // console.log('Press Letters only!!!');
+                      document.getElementById("message").textContent = "Press Letters Only!"
                      }
       }
 
